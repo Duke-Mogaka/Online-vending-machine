@@ -35,7 +35,10 @@ contract owner can restock the inventory when items run low.<br>
 └── LICENSE....................# License information (e.g., MIT License)<br>
 
 <h3>Demo</h3>
-<img src="https://github.com/username/repository-name/blob/main/path/to/image.png?raw=true" width="300" height="300">
+<img src="Block chain2.PNG?raw=true" width="800" height="300"><br>
+
+
+<img src="Block chain.PNG?raw=true" width="800" height="300">
 
 
 
