@@ -32,7 +32,7 @@ contract owner can restock the inventory when items run low.<br>
 ├── VendingMachine.sol.........# Main Solidity smart contract<br>
 ├── README.md..................# Project documentation<br>
 ├── .gitignore.................# Git ignore file<br>
-└── LICENSE....................# License information (e.g., MIT License)<br>
+
 
 <h3>Demo</h3>
 <img src="Block chain2.PNG?raw=true" width="800" height="300"><br>
