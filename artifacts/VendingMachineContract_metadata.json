@@ -1,0 +1,431 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_productName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "LogTransaction",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum VendingMachineContract.ProductCategories",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "VendingMachine",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum VendingMachineContract.ProductCategories",
+						"name": "_productType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_stock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_image",
+						"type": "string"
+					}
+				],
+				"name": "addProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum VendingMachineContract.ProductCategories",
+						"name": "_productType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "buyProduct",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "customerBags",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyDate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customerAddress",
+						"type": "address"
+					}
+				],
+				"name": "getCustomerBag",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "productName",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "image",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "buyDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct VendingMachineContract.CustomerBag[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum VendingMachineContract.ProductCategories",
+						"name": "_productType",
+						"type": "uint8"
+					}
+				],
+				"name": "getProducts",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "stock",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "image",
+								"type": "string"
+							}
+						],
+						"internalType": "struct VendingMachineContract.Product[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTransaction",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "buyer",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "productName",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct VendingMachineContract.Transaction[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ownerBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "transactions",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum VendingMachineContract.ProductCategories",
+						"name": "_productType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum VendingMachineContract.ProductCategories",
+						"name": "_productType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "updateStock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "widthdrawBalance",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Vending_machine.sol": "VendingMachineContract"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Vending_machine.sol": {
+			"keccak256": "0x2b37f77eab3ab3ac2a1fdb094c1adddfd55e137371b72be474c329e533f1b6b7",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://f1fc430a7b29bd649080ef3cee2b0c7c15cc72e20412c0b680c58ae93cd995c9",
+				"dweb:/ipfs/QmVUr6XSQXGp1CsHuxnoxsw4NB7gmD2RjP1AyUx76SJsbW"
+			]
+		}
+	},
+	"version": 1
+}
